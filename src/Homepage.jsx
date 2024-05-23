@@ -8,13 +8,11 @@ import Subsection4 from './components/Subsection4'
 const Homepage = () => {
     return (
         <>
-            <div className="container my-4 p-4 rounded-5 shadow">
-                <Landingpage />
-                <Subsection1 />
-                <Subsection2 />
-                <Subsection3 />
-                <Subsection4 />
-            </div>
+            <Landingpage />
+            <Subsection1 />
+            <Subsection2 />
+            <Subsection3 />
+            <Subsection4 />
         </>
     )
 }
