@@ -70,8 +70,8 @@ const Navbar = () => {
                                     {
                                         firstName && (
                                             <>
-                                                <Link to="#" className='hover-btn mx-2' onClick={handleLogout}>Logout</Link>
-                                                <span className='px-3'>Welcome, <span className='text-success fw-bold'>@{firstName}</span></span>
+                                                    <Link to="#" className='hover-btn nav-link' onClick={handleLogout}>Logout</Link>
+                                                    <span className='px-3'>Welcome, <span className='text-success fw-bold'>@{firstName}</span></span>
                                             </>
                                         )
                                     }

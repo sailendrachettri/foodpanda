@@ -4,88 +4,89 @@ import dish_image_2 from '../assets/menu/menu_dish_2.png';
 import dish_image_3 from '../assets/menu/menu_dish_3.png';
 import dish_image_4 from '../assets/menu/menu_dish_4.png';
 import dish_image_5 from '../assets/menu/menu_dish_5.png';
+import {toast} from 'react-toastify';
 
 // Define an array of objects containing product details
 const products = [
   {
-    id: 1,
+    id: '001',
     name: "Chicken Masala",
     description: "Creamy Chicken",
     price: "$14.99",
     image: dish_image_5
   },
   {
-    id: 2,
+    id: '002',
     name: "Margherita Pizza",
     description: "Classic Italian Pizza",
     price: "$12.50",
     image: dish_image_2
   },
   {
-    id: 3,
+    id: '003',
     name: "Sushi Platter",
     description: "Fresh Assorted Sushi",
     price: "$24.99",
     image: dish_image_3
   },
   {
-    id: 4,
+    id: '004',
     name: "Beef Burger",
     description: "Juicy Cheeseburger",
     price: "$10.99",
     image: dish_image_4
   },
   {
-    id: 5,
+    id: '005',
     name: "Margherita Pizza",
     description: "Classic Italian Pizza",
     price: "$12.50",
     image: dish_image_5
   },
   {
-    id: 6,
+    id: '006',
     name: "Pasta Carbonara",
     description: "Creamy Bacon Pasta",
     price: "$15.99",
     image: dish_image_4
   },
   {
-    id: 7,
+    id: '007',
     name: "Shrimp Tacos",
     description: "Grilled Shrimp Tacos",
     price: "$18.50",
     image: dish_image_3
   },
   {
-    id: 8,
+    id: '008',
     name: "Vegetable Stir Fry",
     description: "Savory Veg Stir-Fry",
     price: "$11.99",
     image: dish_image_2
   },
   {
-    id: 9,
+    id: '009',
     name: "Mango Chicken",
     description: "Tangy Mango Chicken",
     price: "$16.99",
     image: dish_image_1
   },
   {
-    id: 10,
+    id: '010',
     name: "Cheese Platter",
     description: "Artisan Cheese Board",
     price: "$22.99",
     image: dish_image_5
   },
   {
-    id: 11,
+    id: '011',
     name: "Margherita Pizza",
     description: "Classic Italian Pizza",
     price: "$12.50",
     image: dish_image_2
   },
   {
-    id: 12,
+    id: '012',
     name: "Chocolate Fondue",
     description: "Rich Chocolate Dip",
     price: "$9.99",
@@ -94,6 +95,12 @@ const products = [
 ];
 
 const Menu = () => {
+  // METHODS
+
+  function handleAddToCard(itemId){
+    toast.success(`Item added to card id ${itemId}`)
+  }
+
   return (
     <>
       <main className="container my-5" id="productContainer">
@@ -108,7 +115,7 @@ const Menu = () => {
                   <p>{product.description}</p>
                   <p>{product.price}</p>
                   <div className="d-flex justify-content-evenly">
-                    <span className="material-symbols-outlined" id={`cart-${product.id}`}>shopping_cart</span>
+                    <span className="material-symbols-outlined" id={`cart-${product.id}`} onClick={()=> handleAddToCard(product.id)}>shopping_cart</span>
                     <span className="material-symbols-outlined">favorite</span>
                   </div>
                 </div>
