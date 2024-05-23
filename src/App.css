@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color-light: rgba(226, 241, 253, 0.651);
+    --para-font: "system-ui", "sans-serif" ;
+    --heading-font: "Dosis", sans-serif;
+    --logo-font: "Oswald", sans-serif;
+}
+
+body {
+    font-family: var(--para-font);
+    background: rgb(194,191,236);
+    background: linear-gradient(315deg, rgba(194,191,236,1) 0%, rgb(243, 240, 234) 22%, rgba(193,229,236,1) 100%);
+}
+
+.logo {
+    font-family: var(--logo-font);
+}
+
+a {
+    font-family: var(--para-font);
+    text-decoration: none;
+}
+
+.hover-btn:hover {
+    background-color: rgba(0, 0, 0, 0.24);
+    border: 1px solid inherit;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 750px){
+    .hover-btn:hover {
+        display: none;
+    }
+}
+
+p {
+    line-height: 2rem;
+}
+
+.material-symbols-outlined {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+}
+
+
+.second-section .item-cards {
+    height: max-content;
+    background-color: var(--bg-color-light) !important;
+}
+
+.fifth-section .playstore-icon {
+    width: auto;
+    height: 50px;
+}
+
+.fifth-section .appstore-icon {
+    width: auto;
+    height: 32px;
+}
+
+.card-width {
+    background-color: var(--bg-color-light) !important;
+    width: fit-content !important;
+}
