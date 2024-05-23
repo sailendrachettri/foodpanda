@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { SERVER_URL } from "../environment";
+import { UserContext } from '../UserContext';
 
 
 const Login = () => {
@@ -12,6 +13,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState("Login");
+  const { setUserInfo } = useContext(UserContext);
 
   // METHODS
   const handleLogin = async (e) => {
@@ -30,9 +32,9 @@ const Login = () => {
 
       if (response.ok) {
         response.json().then(userInfo => {
+          setUserInfo(userInfo);
           navigate("/");
         })
-
         toast.success("Logged in successfully!");
 
       } else {
