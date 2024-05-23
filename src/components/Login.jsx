@@ -1,27 +1,73 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify';
+import { SERVER_URL } from "../environment";
+
 
 const Login = () => {
+  // VARIABLES
+  const navigate = useNavigate();
+
+  // HOOKS
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState("Login");
 
   // METHODS
-  const handleLogin = (e) =>{
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    alert("Hellow");
+    try {
+
+      const response = await fetch(`${SERVER_URL}/api/auth/user/login`, {
+        method: 'POST',
+        body: JSON.stringify({ email, password }),
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+      })
+
+
+
+      if (response.ok) {
+        response.json().then(userInfo => {
+          navigate("/");
+        })
+
+        toast.success("Logged in successfully!");
+
+      } else {
+
+        setLoading("Login")
+        response.json().then(userInfo => {
+          toast.error(userInfo.message);
+        })
+      }
+
+    } catch (error) {
+      setLoading("Login")
+      toast.error("Internal server error. Please try again later.");
+    }
+
+  }
+
+  const handleLoading = (e) => {
+    if (email && password) {
+      setLoading("Please wait...");
+    }
   }
   return (
     <>
-     <main>
-            <section  className="container card-width d-flex flex-column align-items-center my-5 shadow p-5 mb-5 bg-body rounded">
-                <h4 className="display-6 mb-4">Welcome Back</h4>
-                <form onSubmit={handleLogin} className="d-flex flex-column gap-3 w-auto border rounded p-4">
-                    <input type="email" name="email" className="email form-control" placeholder="email" />
-                    <input type="password" name="password" className="password form-control" placeholder="password" />
-                    <p>Don't have an account <Link to="/signup">Create</Link> here</p>
-                    <button className="btn btn-outline-dark">Signup</button>
-                </form>
-            </section>
-        </main>
+      <main>
+        <section className="container card-width d-flex flex-column align-items-center my-5 shadow p-5 mb-5 bg-body rounded">
+          <h4 className="display-6 mb-4">Welcome Back</h4>
+          <form onSubmit={handleLogin} className="d-flex flex-column gap-3 w-auto border rounded p-4">
+            <input type="email" value={email} onChange={ev => { setEmail(ev.target.value) }} className="email form-control" placeholder="email" required />
+            <input type="password" value={password} onChange={ev => { setPassword(ev.target.value) }} className="password form-control" placeholder="password" required />
+            <p>Don't have an account <Link to="/signup">Create</Link> here</p>
+            <button onClick={handleLoading} className="btn btn-outline-dark">{loading}</button>
+          </form>
+        </section>
+      </main>
     </>
   )
 }
