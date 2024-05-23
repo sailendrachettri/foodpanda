@@ -6,11 +6,15 @@ import Menu from './components/Menu';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   return (
     <div className='container my-5 p-4 rounded-5 shadow'>
       <Navbar />
+      <ToastContainer />
       <Routes>
         <Route path='/' element={<Homepage />} /> 
         <Route path='/login' element={<Login />} />
