@@ -11,7 +11,7 @@ const Subsection2 = () => {
                     <h1 className="h1">It takes only 25 minutes to deliver your food order</h1>
                     <p className="mt-4">Delicious Food is Waiting For you - It takes only 25 minutes to deliver your food
                         order.
-                        Order now and satisfy your cravings in no time with our swift delivery service.</p>
+                        Order now and satisfy your cravings in no time with our swift delivery services.</p>
                 </div>
                 <div className="col-md-6">
                     <img src={dish_image_1} className="img-fluid" alt="One food item" />

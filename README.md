@@ -8,9 +8,9 @@ Our user-friendly platform allows you to discover new culinary adventures, while
 
 **Client:** REACTJS, JAVASCRIPT
 
-**Server:** NodeJs, Express
+**Server:** Node.js, Express.js
 
-**Database:** mongoDB
+**Database:** MongoDB
 
 **Design:** Bootstrap
 

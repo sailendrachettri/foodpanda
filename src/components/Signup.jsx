@@ -63,7 +63,7 @@ const Signup = () => {
             <input type="password" className="password form-control" value={password} onChange={ev => { setPassword(ev.target.value) }} name="password" placeholder="password" required />
             <input type="password" className="password form-control" value={cpassword} onChange={ev => setCpassword(ev.target.value)} name="cpassword" placeholder="confirm password" required />
             <input type="number" className="form-control" value={phone} onChange={ev => { setPhone(ev.target.value) }} name="phone" placeholder="phone" required />
-            <p>Already have an account <Link to="/login">Login</Link> here</p>
+            <p>Already have an account?<Link to="/login">Loginhere</Link> </p>
             <button onClick={handleLoading} type="submit" className="btn btn-outline-dark">{loading}</button>
           </form>
         </section>

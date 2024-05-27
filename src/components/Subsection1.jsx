@@ -14,7 +14,7 @@ const Subsection1 = () => {
                                 <img src={dish_image_1} className="img-fluid" alt="Food items" />
                                     <div className="d-flex flex-column">
                                         <h4>Burger Spicy </h4>
-                                        <p>Spicy with Veggies</p>
+                                        <p>Spicy with veggies</p>
                                         <p>$925.89</p>
                                         <div className="d-flex justify-content-evenly">
                                             <span className="material-symbols-outlined">
@@ -31,8 +31,8 @@ const Subsection1 = () => {
                             <div className="item-cards text-center shadow p-3 bg-body rounded">
                                 <img src={dish_image_2} className="img-fluid" alt="Food items" />
                                     <div className="d-flex flex-column">
-                                        <h4>California-style Pizza</h4>
-                                        <p>Non Spicy with Toppings</p>
+                                        <h4>California-style pizza</h4>
+                                        <p>Non-spicy with toppings</p>
                                         <p>$12.50</p>
                                         <div className="d-flex justify-content-evenly">
                                             <span className="material-symbols-outlined">

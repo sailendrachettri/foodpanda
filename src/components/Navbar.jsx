@@ -48,7 +48,7 @@ const Navbar = () => {
                     <div className="container-fluid">
                         <Link className="navbar-brand" to="/">
                             <h1 className="h1 logo">Restaurant</h1>
-                            <p className="h5 text-muted">Get the world's best teast</p>
+                            <p className="h5 text-muted">Get the world's best taste</p>
                         </Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
