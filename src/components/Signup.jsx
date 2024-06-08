@@ -35,16 +35,19 @@ const Signup = () => {
       if (data.success) {
         toast.success(`Thank you ${fullname.split(" ")[0]} for registration.`);
         navigate("/login");
+        setFullname("");
+        setEmail("");
+        setPassword("");
+        setCpassword("");
+        setPhone("");
 
       } else {
-
         toast.error(data.message);
         setLoading("Signup")
       }
     } catch (error) {
-
+      console.log("error: ", error);
       setLoading("Signup")
-      toast.error("Internal server error. Please try again later.");
     }
   }
 
