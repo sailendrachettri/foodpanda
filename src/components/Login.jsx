@@ -80,7 +80,7 @@ const Login = () => {
           <form onSubmit={handleLogin} className="d-flex flex-column gap-3 w-auto border rounded p-4">
             <input type="email" value={email} onChange={ev => { setEmail(ev.target.value) }} className="email form-control" placeholder="email" required />
             <input type="password" value={password} onChange={ev => { setPassword(ev.target.value) }} className="password form-control" placeholder="password" required />
-            <p>Don't have an account <Link to="/signup">Create</Link> here</p>
+            <p>Don't have an account?<Link to="/signup">Create here.</Link></p>
             <button onClick={handleLoading} className="btn btn-outline-dark">{loading}</button>
           </form>
         </section>

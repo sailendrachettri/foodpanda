@@ -8,7 +8,7 @@ const Landingpage = () => {
     <>
     <section className="row first-section">
                 <div className="col-md-6 mt-4 order-sm-first order-last">
-                    <h1 className="mt-4 display-3">Delicious Food is Wating for You</h1>
+                    <h1 className="mt-4 display-3">Delicious food is wating for You</h1>
                     <Link to="/menu">
                         <button className="btn btn-dark mt-5 rounded-start">Get menu &#x279E;</button>
                     </Link>
