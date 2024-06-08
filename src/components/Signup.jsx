@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { SERVER_URL } from "../environment";
 import { toast } from 'react-toastify';
+import PageLoading from '../utils/PageLoading';
 
 const Signup = () => {
   // VARIABLES
@@ -14,6 +15,7 @@ const Signup = () => {
   const [cpassword, setCpassword] = useState("");
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState("Signup");
+  const [pageLoading, setPageLoading] = useState(true);
 
   // METHODS
   const handleSignup = async (e) => {
@@ -50,6 +52,18 @@ const Signup = () => {
     // if user entered all the details then only show msg
     if (fullname && password && email && cpassword && phone)
       setLoading("Please wait...");
+  }
+
+  setTimeout(() => {
+    setPageLoading(false);
+  }, 2000);
+
+  if (pageLoading) {
+    return (
+      <div className='d-flex justify-content-center align-items-center' style={{minHeight: '50vh'}}>
+        <PageLoading />
+      </div>
+    );
   }
 
   return (

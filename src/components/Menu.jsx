@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import dish_image_1 from '../assets/menu/menu_dish_1.png';
 import dish_image_2 from '../assets/menu/menu_dish_2.png';
 import dish_image_3 from '../assets/menu/menu_dish_3.png';
 import dish_image_4 from '../assets/menu/menu_dish_4.png';
 import dish_image_5 from '../assets/menu/menu_dish_5.png';
 import {toast} from 'react-toastify';
+import PageLoading from '../utils/PageLoading';
 
 // Define an array of objects containing product details
 const products = [
@@ -95,10 +96,24 @@ const products = [
 ];
 
 const Menu = () => {
-  // METHODS
+  // HOOKS
+  const [pageLoading, setPageLoading] = useState(true);
 
+  // METHODS
   function handleAddToCard(itemId){
     toast.success(`Item added to card id ${itemId}`)
+  }
+
+  setTimeout(() => {
+    setPageLoading(false);
+  }, 2000);
+
+  if (pageLoading) {
+    return (
+      <div className='d-flex justify-content-center align-items-center' style={{minHeight: '50vh'}}>
+        <PageLoading />
+      </div>
+    );
   }
 
   return (

@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { SERVER_URL } from "../environment";
 import { UserContext } from '../UserContext';
+import PageLoading from '../utils/PageLoading';
 
 
 const Login = () => {
@@ -14,6 +15,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState("Login");
   const { setUserInfo } = useContext(UserContext);
+  const [pageLoading, setPageLoading] = useState(true);
 
   // METHODS
   const handleLogin = async (e) => {
@@ -57,6 +59,19 @@ const Login = () => {
       setLoading("Please wait...");
     }
   }
+
+  setTimeout(() => {
+    setPageLoading(false);
+  }, 2000);
+
+  if (pageLoading) {
+    return (
+      <div className='d-flex justify-content-center align-items-center' style={{minHeight: '50vh'}}>
+        <PageLoading />
+      </div>
+    );
+  }
+
   return (
     <>
       <main>
