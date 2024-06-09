@@ -10,6 +10,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PageLoading from './utils/PageLoading';
 import { useState } from 'react';
+import PageNotFound from './utils/PageNotFound';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
       <ToastContainer />
       <Routes>
         <Route path='/' element={<Homepage />} />
+        <Route path='*' element={<PageNotFound />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/menu' element={<Menu />} />
